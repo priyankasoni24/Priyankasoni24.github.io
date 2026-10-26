@@ -270,13 +270,13 @@
 <body>
 
     <div class="header">
-        <div class="header-title">Priyanka 🐒</div>
+        <div class="header-title">Priyanka</div>
         <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">🌙</button>
     </div>
 
     <div class="container">
         <div class="hero">
-            <h1 id="greeting">Hello, Priyanka 🐒.</h1>
+            <h1 id="greeting">Hello, Priyanka.</h1>
             <p id="live-clock">Loading...</p>
         </div>
 
@@ -366,12 +366,12 @@
         function updateDashboard() {
             const now = new Date();
             
-            // DYNAMIC GREETING WITH MONKEY EMOJI
+            // DYNAMIC GREETING
             const hour = now.getHours();
-            let greeting = "Hello, Priyanka 🐒.";
-            if (hour < 12) greeting = "Good Morning, Priyanka 🐒.";
-            else if (hour < 18) greeting = "Good Afternoon, Priyanka 🐒.";
-            else greeting = "Good Evening, Priyanka 🐒.";
+            let greeting = "Hello, Priyanka.";
+            if (hour < 12) greeting = "Good Morning, Priyanka.";
+            else if (hour < 18) greeting = "Good Afternoon, Priyanka.";
+            else greeting = "Good Evening, Priyanka.";
             document.getElementById('greeting').innerText = greeting;
 
             // CLOCK
