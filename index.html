@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachin | Dashboard</title>
+    <title>Priyanka | Dashboard</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono&display=swap');
 
@@ -270,13 +270,13 @@
 <body>
 
     <div class="header">
-        <div class="header-title">Sachin</div>
+        <div class="header-title">Priyanka</div>
         <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">🌙</button>
     </div>
 
     <div class="container">
         <div class="hero">
-            <h1 id="greeting">Hello, Sachin.</h1>
+            <h1 id="greeting">Hello, Priyanka.</h1>
             <p id="live-clock">Loading...</p>
         </div>
 
@@ -352,7 +352,9 @@
     </div>
 
     <script>
-        const birthDate = new Date(1998, 10, 27, 20, 15, 0); 
+        // PRIYANKA'S EXACT BIRTH DATE & TIME: Dec 24, 2000 at 3:30 AM
+        const birthDate = new Date(2000, 11, 24, 3, 30, 0); 
+        
         const expectedLifespanYears = 80;
         let showSeconds = false;
 
@@ -366,10 +368,10 @@
             
             // DYNAMIC GREETING
             const hour = now.getHours();
-            let greeting = "Hello, Sachin.";
-            if (hour < 12) greeting = "Good Morning, Sachin.";
-            else if (hour < 18) greeting = "Good Afternoon, Sachin.";
-            else greeting = "Good Evening, Sachin.";
+            let greeting = "Hello, Priyanka.";
+            if (hour < 12) greeting = "Good Morning, Priyanka.";
+            else if (hour < 18) greeting = "Good Afternoon, Priyanka.";
+            else greeting = "Good Evening, Priyanka.";
             document.getElementById('greeting').innerText = greeting;
 
             // CLOCK
@@ -382,8 +384,10 @@
             const secondsLived = Math.floor(msSinceBirth / 1000);
 
             if (showSeconds) {
+                // If switch is tapped, show massive seconds
                 document.getElementById('age-display').innerText = secondsLived.toLocaleString();
             } else {
+                // Default: show years ticking extremely fast
                 document.getElementById('age-display').innerText = yearsSinceBirth.toFixed(8);
             }
 
@@ -401,7 +405,7 @@
             document.getElementById('day-percent').innerText = dayPercent.toFixed(2) + "%";
 
             // BIRTHDAY
-            let nextBirthday = new Date(now.getFullYear(), 10, 27, 20, 15, 0);
+            let nextBirthday = new Date(now.getFullYear(), birthDate.getMonth(), birthDate.getDate(), birthDate.getHours(), birthDate.getMinutes(), 0);
             if (now > nextBirthday) nextBirthday.setFullYear(now.getFullYear() + 1);
             const diff = nextBirthday - now;
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -414,10 +418,10 @@
         // BUCKET LIST LOGIC
         const taskInput = document.getElementById('task-input');
         const bucketList = document.getElementById('bucket-list');
-        let tasks = JSON.parse(localStorage.getItem('sachinTasks')) || [];
+        let tasks = JSON.parse(localStorage.getItem('priyankaTasks')) || [];
 
         function saveTasks() {
-            localStorage.setItem('sachinTasks', JSON.stringify(tasks));
+            localStorage.setItem('priyankaTasks', JSON.stringify(tasks));
             renderTasks();
         }
 
@@ -457,7 +461,7 @@
         taskInput.addEventListener('keypress', e => { if (e.key === 'Enter') addTask(); });
 
         // HABIT TRACKER
-        let streakData = JSON.parse(localStorage.getItem('sachinHabit')) || { streak: 0, lastDate: null };
+        let streakData = JSON.parse(localStorage.getItem('priyankaHabit')) || { streak: 0, lastDate: null };
         
         function updateStreakUI() {
             document.getElementById('streak-count').innerText = streakData.streak;
@@ -480,7 +484,7 @@
             }
             
             streakData.lastDate = today;
-            localStorage.setItem('sachinHabit', JSON.stringify(streakData));
+            localStorage.setItem('priyankaHabit', JSON.stringify(streakData));
             updateStreakUI();
         }
 
@@ -492,8 +496,9 @@
         renderTasks();
         updateStreakUI();
         updateDashboard();
-        // FASTER REFRESH RATE (50 milliseconds)
-        setInterval(updateDashboard, 50); 
+        
+        // THE MAGIC LINE: Changed to 10 for ultra-fast speed
+        setInterval(updateDashboard, 10); 
     </script>
 </body>
 </html>
