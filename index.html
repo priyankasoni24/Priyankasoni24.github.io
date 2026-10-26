@@ -74,7 +74,7 @@ li button:hover{transform:scale(1.25)}
 <body>
 <div class="glow"></div>
 <canvas id="particles"></canvas>
-<header><div class="brand">Priyanka 🐒</div><button class="icon-btn" id="themeBtn" aria-label="Toggle theme">🌙</button></header>
+<header><div class="brand">Priyanka</div><button class="icon-btn" id="themeBtn" aria-label="Toggle theme">🌙</button></header>
 <main>
   <section class="hero"><h1><span id="greeting"></span><span class="cursor"></span></h1><p id="clock">Loading…</p></section>
   <div class="grid">
@@ -109,9 +109,9 @@ function setTheme(t){ document.documentElement.dataset.theme = t; $('themeBtn').
 setTheme(store.get('theme', 'dark'));
 $('themeBtn').onclick = () => setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
 
-// Typewriter greeting with Monkey Emoji
+// Typewriter greeting
 const h = new Date().getHours();
-const msg = (h < 5 ? 'Good night' : h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening') + ', Priyanka 🐒.';
+const msg = (h < 5 ? 'Good night' : h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening') + ', Priyanka.';
 let ti = 0;
 (function type(){ $('greeting').textContent = msg.slice(0, ++ti); if (ti < msg.length) setTimeout(type, 70); })();
 
