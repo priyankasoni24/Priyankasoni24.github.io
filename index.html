@@ -161,6 +161,7 @@
             color: var(--text-muted);
         }
 
+        /* Monospace font makes the numbers spin smoothly without shaking the layout */
         .mono-value {
             font-family: 'Space Mono', monospace;
             font-size: clamp(1.8rem, 5vw, 2.8rem);
@@ -495,8 +496,8 @@
         updateStreakUI();
         updateDashboard();
         
-        // THIS MAKES THE NUMBERS RUN FAST (20ms refresh rate)
-        setInterval(updateDashboard, 20); 
+        // THIS IS THE MAGIC LINE: Updates every 10 milliseconds (100 times a second)!
+        setInterval(updateDashboard, 10); 
     </script>
 </body>
 </html>
