@@ -212,7 +212,7 @@
             height: 100%; width: 0%;
             background: var(--text-main);
             border-radius: 10px;
-            transition: width 0.1s linear; /* Made faster for the progress bar */
+            transition: width 0.1s linear;
         }
         .progress-fill.blue { background: var(--accent); }
         .progress-fill.green { background: var(--success); }
@@ -495,8 +495,8 @@
         updateStreakUI();
         updateDashboard();
         
-        // THIS MAKES THE NUMBERS RUN FAST
-        setInterval(updateDashboard, 50); 
+        // THIS MAKES THE NUMBERS RUN FAST (20ms refresh rate)
+        setInterval(updateDashboard, 20); 
     </script>
 </body>
 </html>
