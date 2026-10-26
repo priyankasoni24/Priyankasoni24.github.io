@@ -212,7 +212,7 @@
             height: 100%; width: 0%;
             background: var(--text-main);
             border-radius: 10px;
-            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: width 0.1s linear; /* Made faster for the progress bar */
         }
         .progress-fill.blue { background: var(--accent); }
         .progress-fill.green { background: var(--success); }
@@ -384,10 +384,8 @@
             const secondsLived = Math.floor(msSinceBirth / 1000);
 
             if (showSeconds) {
-                // If switch is tapped, show massive seconds
                 document.getElementById('age-display').innerText = secondsLived.toLocaleString();
             } else {
-                // Default: show years ticking extremely fast
                 document.getElementById('age-display').innerText = yearsSinceBirth.toFixed(8);
             }
 
@@ -497,8 +495,8 @@
         updateStreakUI();
         updateDashboard();
         
-        // THE MAGIC LINE: Changed to 10 for ultra-fast speed
-        setInterval(updateDashboard, 10); 
+        // THIS MAKES THE NUMBERS RUN FAST
+        setInterval(updateDashboard, 50); 
     </script>
 </body>
 </html>
