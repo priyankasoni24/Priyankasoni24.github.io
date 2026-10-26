@@ -52,7 +52,6 @@
             position: relative;
         }
 
-        /* Glowing Focus Gradient */
         .focus-glow {
             position: fixed;
             top: -20vh;
@@ -72,7 +71,6 @@
             100% { transform: translate(10vw, 10vh) scale(1.1); }
         }
 
-        /* Floating Particles Canvas */
         #particle-canvas {
             position: fixed;
             top: 0; left: 0;
@@ -339,7 +337,6 @@
         .btn-complete { color: var(--success); }
         .btn-delete { color: var(--danger); }
 
-        /* --- NEW: Daily Quote Style --- */
         .daily-quote {
             text-align: center;
             padding: 20px;
@@ -454,7 +451,6 @@
             <ul id="bucket-list"></ul>
         </div>
 
-        <!-- NEW: DAILY QUOTE -->
         <div class="daily-quote" id="quote-display">
             "The best way to predict the future is to create it."
         </div>
@@ -462,7 +458,7 @@
     </div>
 
     <script>
-        // --- FLOATING PARTICLES ---
+        // FIXED: Particles Logic
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particlesArray = [];
@@ -511,6 +507,8 @@
             particlesArray.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animateParticles);
         }
+        
+        // Start particles safely
         initParticles();
         animateParticles();
 
@@ -535,7 +533,7 @@
             type();
         }
 
-        // --- NEW: DAILY QUOTE LOGIC ---
+        // --- QUOTES LOGIC ---
         const quotes = [
             "The best way to predict the future is to create it.",
             "Simplicity is the ultimate sophistication.",
@@ -545,4 +543,5 @@
             "Your time is limited, don't waste it living someone else's life.",
             "The journey of a thousand miles begins with one step.",
             "Success is not final, failure is not fatal: it is the courage to continue that counts.",
-    
+            "Do what you can, with what you have, where you are.",
+            "The mind is everything. What you think you become."
